@@ -45,3 +45,24 @@ const slides = [
 ];
 
 console.log(slides);
+
+const app = new Vue(
+    {
+        el: "#app",
+
+        data: {
+            carousel: slides,
+            index: 0,
+        },
+
+        methods: {
+            prevPicture: function () {
+                this.index--;
+            },
+
+            nextPicture: function () {
+                this.index++;
+            },
+        }
+    }
+);

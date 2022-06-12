@@ -16,7 +16,7 @@
         <div class="container" >
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <div class="item" v-for="i in [index]">
                     <img :src="carousel[index].image" alt="carousel[index].title" />
                     <div class="text">
                         <h3>{{ carousel[index].title }}</h3>
@@ -27,7 +27,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevPicture"></div>
                     <div class="next" @click="nextPicture"></div>
-                    <div v-for="picture in carousel" class="thumb active">
+                    <div v-for="picture in carousel" class="thumb active" @click="clickedImg">
                         <img :src="picture.image" :alt="picture.title"/>
                     </div>
                 </div>

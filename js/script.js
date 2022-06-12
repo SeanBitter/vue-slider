@@ -57,12 +57,24 @@ const app = new Vue(
 
         methods: {
             prevPicture: function () {
-                this.index--;
+                if (this.index != 0) {
+                    this.index--;
+                } else {
+                    this.index = 4;
+                }
             },
 
             nextPicture: function () {
-                this.index++;
+                if (this.index != 4) {
+                    this.index++;
+                } else {
+                    this.index = 0;
+                }
             },
+
+            clickedImg: function () {
+                
+            }
         }
     }
 );

@@ -27,7 +27,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevPicture"></div>
                     <div class="next" @click="nextPicture"></div>
-                    <div v-for="picture in carousel" class="thumb active" @click="clickedImg">
+                    <div v-for="(picture, i) in carousel" class="thumb" :class="{'active': index === i}" @click="clickedImg">
                         <img :src="picture.image" :alt="picture.title"/>
                     </div>
                 </div>
